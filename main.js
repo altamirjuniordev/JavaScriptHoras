@@ -7,16 +7,17 @@ function carregar() {
     let Hora = hora.toString()
     let Minutos = minutos.toString() 
 
-    function zero(z) {
-        if (Hora.length==1) {
+    function zero(h,m) {
+        if (h.length==1) {
             hora = `0${Hora}`
-         if (Minutos.length==1) {
-            minutos = `0${minutos}`
-         }
+        }
+         if (m.length==1) {
+            minutos = `0${Minutos}`         
         }
     }
+    zero(Hora,Minutos)
     if (hora<4) {
-        zero(hora)
+        
         saudacao.innerHTML = (`Boa madruga, horário: ${hora}:${minutos}h !`)
         img.src = 'madrugada.png'
     }  else if (hora<12) {
@@ -29,4 +30,4 @@ function carregar() {
         saudacao.innerHTML = (`Boa noite, horário: ${hora}:${minutos}h!`)
         img.src = 'noite.png'
     }
-}
+}       
